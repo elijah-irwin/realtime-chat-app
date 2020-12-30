@@ -98,7 +98,7 @@ const autoScroll = () => {
 const messageTemplate = message => {
     return `
         <div>
-            <div class="message-user">${message.username} - ${message.time}</div>
+            <div class="message-user">${message.username} - ${moment(message.time).format('M/D h:mmA')}</div>
             <div class="message"> > ${message.message}</div>
         </div>
     `;

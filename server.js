@@ -67,7 +67,7 @@ const buildMessage = (username, message) => {
     const newMessage = {
         username,
         message,
-        time: moment().format('M/D h:mmA')
+        time: Date.now()
     }
 
     return newMessage;
