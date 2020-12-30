@@ -8,6 +8,6 @@ if (username) {
 $form.addEventListener('submit', e => {
     e.preventDefault();
     localStorage.setItem('username', $form.user.value);
-    windlow.location.pathname = '/chat';
+    window.location.pathname = '/chat';
 });
 

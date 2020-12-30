@@ -33,7 +33,7 @@ io.on('connection', socket => {
         const newMessage = {
             username,
             message,
-            time: moment().format('h:mmA')
+            time: moment().format('M/D h:mmA')
         }
         messages.push(newMessage);
         io.emit('new-message', newMessage);

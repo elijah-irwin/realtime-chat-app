@@ -34,6 +34,7 @@ body {
 
 .username-btn {
     font-size: 14px;
+    font-weight: 300;
     background: none;
     cursor: pointer;
     border: 1px solid #585858;
@@ -77,6 +78,11 @@ body {
     min-width: 15px;
     background-color: #585858;
     border-radius: 50%;
+}
+
+.leave:hover {
+    cursor: pointer;
+    background-color: rgb(199, 22, 22);
 }
 
 .grid {

@@ -4,6 +4,7 @@ const $user = document.querySelector('.users');
 const $chatbox = document.querySelector('.chatbox');
 const $messageInput = document.querySelector('.msg-input');
 const $sendMessageBtn = document.querySelector('.send-btn');
+const $leave = document.querySelector('.leave');
 const username = localStorage.getItem('username');
 
 // Socket Stuff
@@ -39,6 +40,13 @@ $sendMessageBtn.addEventListener('click', () => {
 $messageInput.addEventListener('keypress', e => {
     if (e.key === 'Enter') {
         sendMessage($messageInput.value);
+    }
+});
+
+$leave.addEventListener('click', () => {
+    if (username) {
+        localStorage.removeItem('username');
+        window.location.pathname = '/';
     }
 });
 
