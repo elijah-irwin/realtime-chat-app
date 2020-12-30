@@ -26,15 +26,11 @@ io.on('connection', socket => {
             username
         }
         users.push(newUser);
-        socket.emit('new-user', { users, messages });
+        io.emit('new-user', { users, messages });
     });
 
     socket.on('new-message', ({ username, message }) => {
-        const newMessage = {
-            username,
-            message,
-            time: moment().format('M/D h:mmA')
-        }
+        const newMessage = buildMessage(username, message);
         messages.push(newMessage);
         io.emit('new-message', newMessage);
     });
@@ -63,3 +59,14 @@ app.get('*', (req, res) => {
 http.listen(port, () => {
     log(chalk.blue(`[server] listening on port ${port}.`))
 });
+
+// Utils
+const buildMessage = (username, message) => {
+    const newMessage = {
+        username,
+        message,
+        time: moment().format('M/D h:mmA')
+    }
+
+    return newMessage;
+};
