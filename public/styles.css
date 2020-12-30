@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #191A1A;
+}
+
+/* Username Stuff */
+.username-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.username-form label {
+    margin-bottom: 10px;
+}
+
+.username-input {
+    background: none;
+    border: 1px solid #585858;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.username-btn {
+    font-size: 14px;
+    background: none;
+    cursor: pointer;
+    border: 1px solid #585858;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Chat Stuff */
+.main {
+    width: 60%;
+    height: 700px;
+    border: 1px solid #585858;
+    border-radius: 5px;
+}
+
+.header {
+    height: 5%;
+    border-bottom: 1px solid #585858;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    flex-grow: 1;
+    font-weight: 300;
+}
+
+.circle {
+    min-height: 15px;
+    margin-left: 8px;
+    min-width: 15px;
+    background-color: #585858;
+    border-radius: 50%;
+}
+
+.grid {
+    height: 95%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.sidebar {
+    padding: 10px;
+    border-right: 1px solid #585858;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+}
+
+.users-header {
+    margin-bottom: 10px;
+}
+
+.users {
+    margin-bottom: 7px;
+    font-size: 13px;
+}
+
+.chat {
+    padding: 10px;
+}
+
+.chatbox {
+    height: 95%;
+    overflow: auto;
+}
+
+.input {
+    height: 5%;
+    display: flex;
+}
+
+.msg-input {
+    flex-grow: 1;
+    background: none;
+    border-top: 1px solid #585858;
+    border-right: none;
+    border-bottom: 1px solid #585858;
+    border-left: 1px solid #585858;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 10px;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+.send-btn {
+    font-size: 18px;
+    background: none;
+    border-top: 1px solid #585858;
+    border-right: 1px solid #585858;
+    border-bottom: 1px solid #585858;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.message-user {
+    font-weight: 200;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+

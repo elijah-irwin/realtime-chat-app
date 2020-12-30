@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Real Time Chat</title>
+    <link rel="stylesheet" href='/styles.css'>
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico'/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="main">
+      <div class="header">
+        <div class="name">Real Time Chat</div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+
+      <div class="grid">
+        <div class="sidebar">
+          <div class="users-header">Users</div>
+          <div class="user-list"></div>
+        </div>
+
+        <div class="chat">
+          <form class="username-form">
+            <label>Enter a username to join <br/>the chat.</label>
+            <input class="username-input" type="text" required>
+            <button class="username-btn">Join &#8594;</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="/username.js"></script>
+  </body>
+
+</html>
