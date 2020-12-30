@@ -22,7 +22,7 @@ io.on('connection', socket => {
 
     socket.on('new-user', username => {
         const newUser = {
-            _id: socket.id,
+            id: socket.id,
             username
         }
         users.push(newUser);
@@ -37,9 +37,11 @@ io.on('connection', socket => {
 
     socket.on('disconnect', () => {
         const x = users.findIndex(user => user.id === socket.id);
-        users.splice(x,1);
-        io.emit('user-disconnect', users);
-        log(chalk.red('User disconnected.'));
+        if (x > 0) {
+            users.splice(x,1);
+            io.emit('user-disconnect', users);
+            log(chalk.red('User disconnected.'));
+        }
     });
 });
 
