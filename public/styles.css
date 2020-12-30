@@ -49,6 +49,15 @@ body {
     border-radius: 5px;
 }
 
+@media (max-width: 800px) {
+    .main {
+        width: 90%;
+        height: 95%;
+        border: 1px solid #585858;
+        border-radius: 5px;
+    } 
+}
+
 .header {
     height: 5%;
     border-bottom: 1px solid #585858;
