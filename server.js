@@ -37,7 +37,7 @@ io.on('connection', socket => {
 
     socket.on('disconnect', () => {
         const x = users.findIndex(user => user.id === socket.id);
-        if (x > 0) {
+        if (x !== -1) {
             users.splice(x,1);
             io.emit('user-disconnect', users);
             log(chalk.red('User disconnected.'));
