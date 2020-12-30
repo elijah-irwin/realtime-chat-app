@@ -16,24 +16,31 @@ const users = [];
 
 // Sockets
 io.on('connection', socket => {
-    
+
     // new connection
     log(chalk.green('New connection!'));
-    users.push(socket.id);
-    io.emit('new-user', { users, messages });
 
-    socket.on('new-message', message => {
+    socket.on('new-user', username => {
+        const newUser = {
+            _id: socket.id,
+            username
+        }
+        users.push(newUser);
+        socket.emit('new-user', { users, messages });
+    });
+
+    socket.on('new-message', ({ username, message }) => {
         const newMessage = {
+            username,
             message,
-            time: moment().format('h:mmA'),
-            user: socket.id
+            time: moment().format('h:mmA')
         }
         messages.push(newMessage);
         io.emit('new-message', newMessage);
     });
 
     socket.on('disconnect', () => {
-        const x = users.findIndex((user) => user === socket.id);
+        const x = users.findIndex(user => user.id === socket.id);
         users.splice(x,1);
         io.emit('user-disconnect', users);
         log(chalk.red('User disconnected.'));

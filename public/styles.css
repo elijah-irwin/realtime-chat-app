@@ -94,15 +94,19 @@ body {
 
 .chat {
     padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .chatbox {
-    height: 95%;
+    flex-grow: 1;
+    margin-bottom: 10px;
     overflow: auto;
 }
 
 .input {
-    height: 5%;
+    height: 34px;
     display: flex;
 }
 
@@ -132,6 +136,7 @@ input:focus, button:focus {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
+    padding-right: 10px;
 }
 
 .message-user {
@@ -142,6 +147,5 @@ input:focus, button:focus {
 
 .message {
     margin-bottom: 10px;
+    font-size: 14px;
 }
-
-
