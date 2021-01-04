@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
+const sanitizeHtml = require('sanitize-html');
+const sanitizeOptions = { allowedTags: [], allowedAttributes: {} };
 const chalk = require('chalk');
-const moment = require('moment');
 const log = console.log;
+
 
 const port = process.env.PORT || 3000;
 
@@ -23,7 +25,7 @@ io.on('connection', socket => {
     socket.on('new-user', username => {
         const newUser = {
             id: socket.id,
-            username
+            username: sanitizeHtml(username, sanitizeOptions)
         }
         users.push(newUser);
         io.emit('new-user', { users, messages });
@@ -65,8 +67,8 @@ http.listen(port, () => {
 // Utils
 const buildMessage = (username, message) => {
     const newMessage = {
-        username,
-        message,
+        username: sanitizeHtml(username, sanitizeOptions),
+        message: sanitizeHtml(message, sanitizeOptions),
         time: Date.now()
     }
 
